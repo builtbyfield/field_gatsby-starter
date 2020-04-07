@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/field_gatsby-starter",
   siteMetadata: {
     title: `Field Gatsby Starter`,
     description: `Opinionated Gatsby starter by Field.`,
