@@ -8,11 +8,11 @@ Nearly all components are built from the `Box` component primitive which we inje
 
 For more information about how this technology stack operates refer to the documentation of the packages we work with to learn more. Additional questions should be sent to [info@builtbyfield.com](mailto:info@builtbyfield.com) with a subject line that includes the name of the repo. For help with the expansion of the website using our internal design system, please also refer to the same email.
 
-# To Do's
+# Common Project To Do's
 
 ## Infrastructure
 
-- [x] Create task list
+- [ ] Create task list
 - [ ] Set up code infrastructure
 - [ ] Set up version control
 - [ ] Set up hosting

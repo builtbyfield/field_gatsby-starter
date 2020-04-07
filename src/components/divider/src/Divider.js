@@ -10,7 +10,7 @@ function Divider() {
         position="absolute"
         width="100%"
         height="1px"
-        bg="faint"
+        bg="surface.border"
         css={{ transform: "translateY(-50%)" }}
       />
     </Box>

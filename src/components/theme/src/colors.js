@@ -7,6 +7,7 @@ export default {
   },
   surface: {
     background: "#fff",
+    wash: rgba("#000", 0.05),
     border: rgba("#000", 0.1),
   },
   brand: {
