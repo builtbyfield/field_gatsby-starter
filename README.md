@@ -1,6 +1,6 @@
 # Introduction
 
-A website for United Way of Calgary and Area for the 2019 Annual Impact Report built using [GatsbyJS](https://www.gatsbyjs.org/) by [Field Creative Inc](https://builtbyfield.com/). We utilize a CSS-in-JS approach for styling using a combination of [Emotion](https://emotion.sh/) and [styled-system](https://styled-system.com/) (please find more information about this down below).
+A starter built using [GatsbyJS](https://www.gatsbyjs.org/) by [Field Creative Inc](https://builtbyfield.com/). We utilize a CSS-in-JS approach for styling using a combination of [Emotion](https://emotion.sh/) and [styled-system](https://styled-system.com/) (please find more information about this down below).
 
 Our GatsbyJS setup includes a plugin for Layouts which allows us to use the original GatsbyJS API for setting up a common wrapper for usage across every page of the website.
 
@@ -13,22 +13,22 @@ For more information about how this technology stack operates refer to the docum
 ## Infrastructure
 
 - [x] Create task list
-- [x] Set up code infrastructure
-- [x] Set up version control
+- [ ] Set up code infrastructure
+- [ ] Set up version control
 - [ ] Set up hosting
-- [x] Model content management system (CMS)
-- [x] Pass data from CMS to code (have it rendering and ready for styling)
+- [ ] Model content management system (CMS)
+- [ ] Pass data from CMS to code (have it rendering and ready for styling)
 
 ## Styling
 
-- [x] Receive designs and new assets
-- [x] Flag easy, medium, and challenging style tasks
-- [x] Set up theme files (colors, fonts, spacing, grid, typography, wrapper, etc)
-- [x] Style specific components (buttons, dropdowns, etc)
-- [x] Layout content in alignment with designs
-- [x] Adjust layout to respond to mobile specifications
-- [x] Fine tune styling to make pixel-perfect to designs
-- [x] Introduce interactive motion and animations
+- [ ] Receive designs and new assets
+- [ ] Flag easy, medium, and challenging style tasks
+- [ ] Set up theme files (colors, fonts, spacing, grid, typography, wrapper, etc)
+- [ ] Style specific components (buttons, dropdowns, etc)
+- [ ] Layout content in alignment with designs
+- [ ] Adjust layout to respond to mobile specifications
+- [ ] Fine tune styling to make pixel-perfect to designs
+- [ ] Introduce interactive motion and animations
 
 ## Testing
 

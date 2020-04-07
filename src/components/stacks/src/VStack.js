@@ -1,3 +1,11 @@
+/**
+ * VStack
+ *
+ * VStack allows us to vertically stack elements by a value
+ * define by the space prop. It accepts most units and values
+ * as well as spacing properties in the Theme.
+ */
+
 import React, { Children } from "react"
 
 import { Box, Divider } from "components"

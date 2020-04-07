@@ -5,19 +5,19 @@ module.exports = {
     author: `@builtbyfield`,
   },
   plugins: [
+    `gatsby-transformer-sharp`,
+
+    /**
+     * Forces Gatsby to use trailing slashes on pathnames to ensure consistent URLs
+     * https://www.gatsbyjs.org/packages/gatsby-plugin-force-trailing-slashes/
+     */
+    `gatsby-plugin-force-trailing-slashes`,
+
     /**
      * Provides drop-in support for server rendering data added with React Helmet.
      * React Helmet is a component which lets you control your document head using their React component.
      */
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    `gatsby-transformer-sharp`,
 
     /**
      * Exposes several image processing functions built on the Sharp image processing library.
@@ -41,10 +41,10 @@ module.exports = {
         name: `field_gatsby-starter`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#f1c71d`,
+        theme_color: `#f1c71d`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
+        icon: `src/images/field_favicon.png`,
       },
     },
 
@@ -69,6 +69,11 @@ module.exports = {
         // Accepts all options defined by `babel-plugin-emotion` plugin.
       },
     },
+
+    /**
+     * Allows us to set up custom aliases for directories.
+     * https://www.gatsbyjs.org/packages/gatsby-plugin-module-resolver/
+     */
     {
       resolve: "gatsby-plugin-module-resolver",
       options: {
