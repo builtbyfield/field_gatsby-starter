@@ -55,7 +55,7 @@ function HStack({ align, as = "div", children, dividers = false, space = 0 }) {
                   position="absolute"
                   width="1px"
                   height="100%"
-                  bg="faint"
+                  bg="surface.border"
                   css={{ transform: "translateX(-50%)" }}
                 />
               </Box>

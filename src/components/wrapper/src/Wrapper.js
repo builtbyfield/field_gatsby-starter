@@ -22,7 +22,6 @@ function Wrapper({
   pb,
   pt,
   px = [20, null, 32],
-  py,
   ...rest
 }) {
   return (
@@ -30,7 +29,6 @@ function Wrapper({
       data-component-id="wrapper"
       as={as}
       px={px}
-      py={py}
       pt={pt}
       pb={pb}
       bg={bg}
