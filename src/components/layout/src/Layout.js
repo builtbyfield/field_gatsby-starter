@@ -9,9 +9,11 @@ function Layout({ children }) {
     <ThemeProvider theme={Theme}>
       <>
         <GlobalStyles />
-        <Header />
-        <Box as="main">{children}</Box>
-        <Footer />
+        <Box display="flex" flexDirection="column" minHeight="100vh">
+          <Header />
+          <Box as="main">{children}</Box>
+          <Footer />
+        </Box>
       </>
     </ThemeProvider>
   )
