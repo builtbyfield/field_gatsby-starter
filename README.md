@@ -1,99 +1,129 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+# Introduction
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+A website for United Way of Calgary and Area for the 2019 Annual Impact Report built using [GatsbyJS](https://www.gatsbyjs.org/) by [Field Creative Inc](https://builtbyfield.com/). We utilize a CSS-in-JS approach for styling using a combination of [Emotion](https://emotion.sh/) and [styled-system](https://styled-system.com/) (please find more information about this down below).
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+Our GatsbyJS setup includes a plugin for Layouts which allows us to use the original GatsbyJS API for setting up a common wrapper for usage across every page of the website.
 
-## 🚀 Quick start
+Nearly all components are built from the `Box` component primitive which we inject with nearly all styled-system props. As often as we can, we refer to the `Theme` component for accessing variables such as color, spacing, fonts, and typographic sizes and weights. These things help us to customize and inject our internal design system in a perdictable manner as the project calls for it.
 
-1.  **Create a Gatsby site.**
+For more information about how this technology stack operates refer to the documentation of the packages we work with to learn more. Additional questions should be sent to [info@builtbyfield.com](mailto:info@builtbyfield.com) with a subject line that includes the name of the repo. For help with the expansion of the website using our internal design system, please also refer to the same email.
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+# To Do's
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+## Infrastructure
 
-1.  **Start developing.**
+- [x] Create task list
+- [x] Set up code infrastructure
+- [x] Set up version control
+- [ ] Set up hosting
+- [x] Model content management system (CMS)
+- [x] Pass data from CMS to code (have it rendering and ready for styling)
 
-    Navigate into your new site’s directory and start it up.
+## Styling
 
-    ```shell
-    cd my-default-starter/
-    gatsby develop
-    ```
+- [x] Receive designs and new assets
+- [x] Flag easy, medium, and challenging style tasks
+- [x] Set up theme files (colors, fonts, spacing, grid, typography, wrapper, etc)
+- [x] Style specific components (buttons, dropdowns, etc)
+- [x] Layout content in alignment with designs
+- [x] Adjust layout to respond to mobile specifications
+- [x] Fine tune styling to make pixel-perfect to designs
+- [x] Introduce interactive motion and animations
 
-1.  **Open the source code and start editing!**
+## Testing
 
-    Your site is now running at `http://localhost:8000`!
+- [ ] Set up bug tracking and review with design team
+- [ ] Browser testing
+- [ ] SEO testing
+- [ ] Final polish and bug fixing
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+# Getting Started
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+1. Install packages with `yarn install`
+2. Run `yarn develop` to spin up the website
+3. Navigate to `localhost:8000` in your favourite browser to view
 
-## 🧐 What's inside?
+# What's inside?
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+A quick look at the top-level files and directories you'll see in this project.
 
     .
     ├── node_modules
     ├── src
+    ├── static
+    ├── .env
     ├── .gitignore
+    ├── .prettierignore
     ├── .prettierrc
     ├── gatsby-browser.js
     ├── gatsby-config.js
     ├── gatsby-node.js
     ├── gatsby-ssr.js
     ├── LICENSE
-    ├── package-lock.json
     ├── package.json
-    └── README.md
+    ├── README.md
+    └── yarn.lock
 
 1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
 
 2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+3.  **`/static`**: This directory contains all assets that should not be processed by the build pipeline but directly uploaded the server. They can be referenced by referring to the root of the site. We use this primarily for font files.
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+4.  **`.env`**: A file to pass secure tokens. You will need to add this manually as this does not get passed in with git. In this case we use it to pass in the Contentful CMS access token.
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+5.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+6.  **`.prettierignore`**: This file tells Prettier (see below) which files it should not help format.
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+7.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+8.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
 
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
+9.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
 
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+10. **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
 
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+11. **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
 
-12. **`README.md`**: A text file containing useful reference information about your project.
+12. **`LICENSE`**: Gatsby is licensed under the MIT license.
 
-## 🎓 Learning Gatsby
+13. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm/yarn knows which packages to install for your project.
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
+14. **`README.md`**: A text file containing useful reference information about your project.
 
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+15. **`yarn.lock`** (See `package.json` above, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
 
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
+# CSS/Styling
 
-## 💫 Deploy
+Our method for styling elements in this project uses [Emotion](https://emotion.sh/), a library designed for writing css styles with JavaScript. It provides powerful and predictable style composition in addition to a great developer experience with features such as source maps, labels, and testing utilities. Both string and object styles are supported.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+Because Emotion abstracts away most traditional CSS classes, we use HTML `data-*` attributes to label components so that editors can easily identify what elements are what components in the DOM. We do this by assigning components `data-component-id="componentName"` attributes. These are great for element-associated metadata and have [little to no performance overhead](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes).
 
-[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
+To expand upon Emotion, we use [styled-system](https://styled-system.com/) which provides us with "style props for rapid UI development." We're able to assign most of the typically styles we use to a component called `Box` which we can then use as a starting point for new components. This allows us to write shorthand CSS and access our `Theme.js` variables providing consistent spacing, colours, fonts, type styles, and breakpoints. Style prop definitions automatically generate into CSS classes that are assigned to their components.
 
-<!-- AUTO-GENERATED-CONTENT:END -->
+# Contribute
+
+We try to comment our code in two ways: 1) describe the "why" for potentially confusing areas of code where the rationale is perhaps foggy, 2) to highlight significant sections of content that may appear distinct on the frontend in either their appearance or behaviour. When contributing to this project, please continue this practice so that other developers have the same clarity when working on the project.
+
+# About Field Creative Inc.
+
+We are a Calgary-based digital product consultancy with an eye for design and mind for strategic execution. We focus on making great new digital experiences and helping existing companies refocus on digital. We don't just make websites and apps—we help organizations understand complex digital problems and build the tools, systems, and digital services needed to solve them. We believe in content driven development that starts with strategy and ends with implementation, utilizing whatever range of technologies or tools to help accomplish a goal. We typically work in four phases: Architect, Design, Build, and Grow.
+
+## How we work
+
+1. **Architect**: We work with you to find the right combination of technology and plan the execution of your digital product.
+2. **Design**: We work from a technical perspective to deliver you user experience and aesthetics tailored for digital experiences.
+3. **Build**: We work using industry leading techniques and frameworks to custom build your product specific to your needs.
+4. **Grow**: We work to assist and educate you in making the best use of the solutions we build for you so you can independently own and grow your product.
+
+## What we do
+
+1. **Technology consulting**: Start with a plan, not a solution. We believe consulting is the first step to solving a digital problem the correct way.
+2. **Digital experiences**: We see the opportunity to approach websites as experiences in order to elevate customer conversion and retention. A well built digital experience is the outcome of equal parts design, engineering, and strategy.
+3. **Design systems**: The reason for introducing a design system is not so people can work less—it's so people can work better. A carefully built and well maintained design system can align an organization.
+4. **No-code**: Building digital tools and automation doesn't always have to mean a website. No-code can help get your idea off the ground faster.
+
+## Contact
+
+We can be reached at [info@builtbyfield.com](mailto:info@builtbyfield.com) or at [our website](https://builtbyfield.com/).

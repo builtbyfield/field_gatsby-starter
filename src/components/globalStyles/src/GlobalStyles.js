@@ -7,7 +7,7 @@
 import React from "react"
 import { Global } from "@emotion/core"
 import css from "@styled-system/css"
-import { hsl, normalize } from "polished"
+import { normalize } from "polished"
 
 const GlobalStyles = () => (
   <Global
@@ -19,10 +19,10 @@ const GlobalStyles = () => (
         overflowY: "scroll",
         m: 0,
         fontFamily: "sans",
-        color: "full",
-        bg: hsl(0, 0, 1),
-        // WebkitFontSmoothing: "antialiased",
-        // MozOsxFontSmoothing: "grayscale",
+        color: "text.default",
+        bg: "surface.background",
+        WebkitFontSmoothing: "antialiased",
+        MozOsxFontSmoothing: "grayscale",
         overscrollBehavior: "none",
       },
       a: {

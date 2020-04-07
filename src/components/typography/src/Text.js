@@ -26,7 +26,7 @@ Text.defaultProps = {
   mt: 0,
   mb: 0,
   size: 500,
-  color: "full",
+  color: "text.default",
 }
 
 export default Text

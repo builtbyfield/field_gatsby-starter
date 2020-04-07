@@ -26,7 +26,7 @@ Heading.defaultProps = {
   mt: 0,
   mb: 0,
   size: 700,
-  color: "full",
+  color: "text.default",
 }
 
 export default Heading
