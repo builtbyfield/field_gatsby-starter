@@ -1,3 +1,26 @@
+![Screenshot of Field Gatsby Starter website](src/images/starter-screenshot.png)
+
+# Table of contents
+
+<!--toc-start-->
+
+- [Table of contents](#table-of-contents)
+- [Introduction](#introduction)
+- [Getting started](#getting-started)
+- [What's inside?](#whats-inside)
+- [Styling](#styling)
+- [Contributing](#contributing)
+- [Common project checklist](#common-project-checklist)
+  - [Infrastructure](#infrastructure)
+  - [Styling](#styling)
+  - [Testing](#testing)
+- [About Field Creative Inc.](#about-field-creative-inc)
+  - [How we work](#how-we-work)
+  - [What we do](#what-we-do)
+  - [Contact](#contact)
+
+<!--toc-end-->
+
 # Introduction
 
 A starter built using [GatsbyJS](https://www.gatsbyjs.org/) by [Field Creative Inc](https://builtbyfield.com/). We utilize a CSS-in-JS approach for styling using a combination of [Emotion](https://emotion.sh/) and [styled-system](https://styled-system.com/) (please find more information about this down below).
@@ -8,36 +31,7 @@ Nearly all components are built from the `Box` component primitive which we inje
 
 For more information about how this technology stack operates refer to the documentation of the packages we work with to learn more. Additional questions should be sent to [info@builtbyfield.com](mailto:info@builtbyfield.com) with a subject line that includes the name of the repo. For help with the expansion of the website using our internal design system, please also refer to the same email.
 
-# Common Project To Do's
-
-## Infrastructure
-
-- [ ] Create task list
-- [ ] Set up code infrastructure
-- [ ] Set up version control
-- [ ] Set up hosting
-- [ ] Model content management system (CMS)
-- [ ] Pass data from CMS to code (have it rendering and ready for styling)
-
-## Styling
-
-- [ ] Receive designs and new assets
-- [ ] Flag easy, medium, and challenging style tasks
-- [ ] Set up theme files (colors, fonts, spacing, grid, typography, wrapper, etc)
-- [ ] Style specific components (buttons, dropdowns, etc)
-- [ ] Layout content in alignment with designs
-- [ ] Adjust layout to respond to mobile specifications
-- [ ] Fine tune styling to make pixel-perfect to designs
-- [ ] Introduce interactive motion and animations
-
-## Testing
-
-- [ ] Set up bug tracking and review with design team
-- [ ] Browser testing
-- [ ] SEO testing
-- [ ] Final polish and bug fixing
-
-# Getting Started
+# Getting started
 
 1. Install packages with `yarn install`
 2. Run `yarn develop` to spin up the website
@@ -94,7 +88,7 @@ A quick look at the top-level files and directories you'll see in this project.
 
 15. **`yarn.lock`** (See `package.json` above, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
 
-# CSS/Styling
+# Styling
 
 Our method for styling elements in this project uses [Emotion](https://emotion.sh/), a library designed for writing css styles with JavaScript. It provides powerful and predictable style composition in addition to a great developer experience with features such as source maps, labels, and testing utilities. Both string and object styles are supported.
 
@@ -102,13 +96,42 @@ Because Emotion abstracts away most traditional CSS classes, we use HTML `data-*
 
 To expand upon Emotion, we use [styled-system](https://styled-system.com/) which provides us with "style props for rapid UI development." We're able to assign most of the typically styles we use to a component called `Box` which we can then use as a starting point for new components. This allows us to write shorthand CSS and access our `Theme.js` variables providing consistent spacing, colours, fonts, type styles, and breakpoints. Style prop definitions automatically generate into CSS classes that are assigned to their components.
 
-# Contribute
+# Contributing
 
 We try to comment our code in two ways: 1) describe the "why" for potentially confusing areas of code where the rationale is perhaps foggy, 2) to highlight significant sections of content that may appear distinct on the frontend in either their appearance or behaviour. When contributing to this project, please continue this practice so that other developers have the same clarity when working on the project.
 
+# Common project checklist
+
+## Infrastructure
+
+- [ ] Create task list
+- [ ] Set up code infrastructure
+- [ ] Set up version control
+- [ ] Set up hosting
+- [ ] Model content management system (CMS)
+- [ ] Pass data from CMS to code (have it rendering and ready for styling)
+
+## Styling
+
+- [ ] Receive designs and new assets
+- [ ] Flag easy, medium, and challenging style tasks
+- [ ] Set up theme files (colors, fonts, spacing, grid, typography, wrapper, etc)
+- [ ] Style specific components (buttons, dropdowns, etc)
+- [ ] Layout content in alignment with designs
+- [ ] Adjust layout to respond to mobile specifications
+- [ ] Fine tune styling to make pixel-perfect to designs
+- [ ] Introduce interactive motion and animations
+
+## Testing
+
+- [ ] Set up bug tracking and review with design team
+- [ ] Browser testing
+- [ ] SEO testing
+- [ ] Final polish and bug fixing
+
 # About Field Creative Inc.
 
-We are a Calgary-based digital product consultancy with an eye for design and mind for strategic execution. We focus on making great new digital experiences and helping existing companies refocus on digital. We don't just make websites and apps—we help organizations understand complex digital problems and build the tools, systems, and digital services needed to solve them. We believe in content driven development that starts with strategy and ends with implementation, utilizing whatever range of technologies or tools to help accomplish a goal. We typically work in four phases: Architect, Design, Build, and Grow.
+[Field](https://builtbyfield.com/) is a Calgary-based digital product consultancy with an eye for design and mind for strategic execution. We focus on making great new digital experiences and helping existing companies refocus on digital. We don't just make websites and apps—we help organizations understand complex digital problems and build the tools, systems, and digital services needed to solve them. We believe in content driven development that starts with strategy and ends with implementation, utilizing whatever range of technologies or tools to help accomplish a goal. We typically work in four phases: Architect, Design, Build, and Grow.
 
 ## How we work
 

@@ -16,7 +16,7 @@ import {
 const StylesPage = () => (
   <>
     <SEO
-      title="Styling - Field Gatsby Starter"
+      title="Styles - Field Gatsby Starter"
       description="Opinionated starter by Field for the Gatsby framework. Using dependencies like Emotion, styled-system, and Polished to deliver high quality and performant interfaces with a great developer experience."
     />
 
