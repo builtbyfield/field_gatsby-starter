@@ -13,18 +13,30 @@
  */
 
 import React from "react"
+import styled from "@emotion/styled"
+import { system } from "styled-system"
 
-import { Box } from "components"
+import { Box } from "../../box"
+
+const StyledBox = styled(Box)(
+  system({
+    ratio: {
+      property: "paddingBottom",
+      transform: n => {
+        let padding = n.split(":")
+        return (padding[1] / padding[0]) * 100 + "%"
+      },
+    },
+  })
+)
 
 const AspectRatio = ({ children, ratio, ...rest }) => {
-  const padding = ratio.split(":")
-
   return (
-    <Box
+    <StyledBox
       data-component-id="aspectRatio"
       position="relative"
       width="100%"
-      pb={(padding[1] / padding[0]) * 100 + "%"}
+      ratio={ratio}
       {...rest}
     >
       <Box
@@ -37,7 +49,7 @@ const AspectRatio = ({ children, ratio, ...rest }) => {
       >
         {children}
       </Box>
-    </Box>
+    </StyledBox>
   )
 }
 

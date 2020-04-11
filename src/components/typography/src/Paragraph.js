@@ -23,8 +23,6 @@ const Paragraph = styled("p", { shouldForwardProp })(
 Paragraph.defaultProps = {
   "data-component-id": "typography.paragraph",
   display: "block",
-  mt: 0,
-  mb: 0,
   size: 500,
   color: "text.default",
 }

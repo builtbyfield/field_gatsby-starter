@@ -67,7 +67,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-emotion`,
       options: {
-        // Accepts all options defined by `babel-plugin-emotion` plugin.
+        /**
+         * Accepts all options defined by `babel-plugin-emotion` plugin.
+         * https://emotion.sh/docs/babel-plugin-emotion
+         */
       },
     },
 

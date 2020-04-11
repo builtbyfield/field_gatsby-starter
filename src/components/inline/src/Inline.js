@@ -1,14 +1,13 @@
 /**
- * Columns
+ * Inline
  *
- * Columns is the direct parent of Column and defines the
- * spacing between each Column.
- *
- * Columns can accept both Theme properties as well as
- * values as whole numbers or pixels.
+ * If you’d like to render a set of components in
+ * a row with equal spacing around them, wrapping
+ * onto multiple lines when necessary, we provide
+ * an ‘Inline’ component.
  */
 
-import React from "react"
+import React, { Children } from "react"
 import styled from "@emotion/styled"
 import { system, get } from "styled-system"
 
@@ -36,7 +35,7 @@ const StyledBox = styled(Box)(
    */
   system({
     negativeMarginX: {
-      properties: ["marginRight", "marginLeft"],
+      property: "marginLeft",
       scale: "space", // Refer the space scale in Theme
       transform: (n, scale) => {
         let value = get(scale, n)
@@ -56,7 +55,7 @@ const StyledBox = styled(Box)(
       },
     },
     negativeMarginY: {
-      properties: ["marginTop", "marginBottom"],
+      property: "marginTop",
       scale: "space", // Refer the space scale in Theme
       transform: (n, scale) => {
         let value = get(scale, n)
@@ -78,40 +77,89 @@ const StyledBox = styled(Box)(
   })
 )
 
-function Columns({ alignY, as = "div", children, space = 0, spaceX, spaceY }) {
-  /**
-   * Setting the "as" prop to "ol" or "ul" will turn the Columns
-   * component into a ol or ul element and all Column children
-   * into li items.
-   */
-  const isList = as === "ol" || as === "ul"
-  const columnComponent = isList ? "li" : "div"
+const InnerStyledBox = styled(Box)(
+  /** Works like the component above but for padding */
+  system({
+    gutterX: {
+      property: "paddingLeft",
+      scale: "space",
+      transform: (n, scale) => {
+        let value = get(scale, n)
+        if (!value) {
+          value = n
+        }
+        if (typeof n === "string") {
+          if (n.indexOf("px") !== -1) {
+            let number = parseInt(n.replace("px", ""))
+            return number / 2 + "px"
+          } else {
+            return value / 2 + "px"
+          }
+        } else {
+          return value / 2 + "px"
+        }
+      },
+    },
+    gutterY: {
+      property: "paddingTop",
+      scale: "space",
+      transform: (n, scale) => {
+        let value = get(scale, n)
+        if (!value) {
+          value = n
+        }
+        if (typeof n === "string") {
+          if (n.indexOf("px") !== -1) {
+            let number = parseInt(n.replace("px", ""))
+            return number / 2 + "px"
+          } else {
+            return value / 2 + "px"
+          }
+        } else {
+          return value / 2 + "px"
+        }
+      },
+    },
+  })
+)
 
-  // Pass properties down to children
-  const childrenWithProps = React.Children.map(children, child =>
-    React.cloneElement(child, {
-      columnComponent: columnComponent,
-      space: space,
-      spaceX: spaceX,
-      spaceY: spaceY,
-    })
-  )
+function Inline({
+  align = "start",
+  as = "div",
+  children,
+  space = 0,
+  spaceX,
+  spaceY,
+}) {
+  const isList = as === "ol" || as === "ul"
+  const stackItemComponent = isList ? "li" : "div"
 
   return (
     <StyledBox
-      data-component-id="columns"
+      data-component-id="inline"
       as={as}
       display="flex"
       flexWrap="wrap"
-      alignItems={flexAlign(alignY)}
+      justifyContent={flexAlign(align)}
       negativeMarginX={spaceX ? spaceX : space}
       negativeMarginY={spaceY ? spaceY : space}
-      p={0}
       css={isList && { listStyle: "none" }}
     >
-      {childrenWithProps}
+      {Children.map(children, child =>
+        child !== null && child !== undefined ? (
+          <InnerStyledBox
+            data-component-id="inline.child"
+            as={stackItemComponent}
+            minWidth={0}
+            gutterX={spaceX ? spaceX : space}
+            gutterY={spaceY ? spaceY : space}
+          >
+            {child}
+          </InnerStyledBox>
+        ) : null
+      )}
     </StyledBox>
   )
 }
 
-export default Columns
+export default Inline

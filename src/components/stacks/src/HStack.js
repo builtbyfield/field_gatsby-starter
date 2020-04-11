@@ -32,7 +32,7 @@ function HStack({ align, as = "div", children, dividers = false, space = 0 }) {
       alignItems={flexAlign(align)}
       m={0}
       p={0}
-      css={{ listStyle: "none" }}
+      css={isList && { listStyle: "none" }}
     >
       {stackItems.map((child, index) => (
         <Box

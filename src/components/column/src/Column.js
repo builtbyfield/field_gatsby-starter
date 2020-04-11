@@ -74,7 +74,9 @@ function Column({
     <StyledBox
       data-component-id="column"
       as={columnComponent}
-      width={width}
+      flex={!width && 1}
+      flexShrink={width === "content" && 0}
+      width={width !== "content" ? width : null}
       minWidth={0}
       gutterX={spaceX ? spaceX : space}
       gutterY={spaceY ? spaceY : space}

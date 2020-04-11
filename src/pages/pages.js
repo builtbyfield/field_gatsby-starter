@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 
 import {
   Box,
+  Card,
   Column,
   Columns,
   Heading,
@@ -19,6 +20,7 @@ const PagesPage = () => (
       title="Pages - Field Gatsby Starter"
       description="Opinionated starter by Field for the Gatsby framework. Using dependencies like Emotion, styled-system, and Polished to deliver high quality and performant interfaces with a great developer experience."
     />
+
     <Wrapper pt={{ _: "layout.5", md: "layout.6" }}>
       <VStack space={{ _: "layout.5", md: "layout.6" }} dividers={true}>
         <Heading size={800}>Pages</Heading>
@@ -67,26 +69,26 @@ const PagesPage = () => (
         <Columns space="layout.1">
           <Column width={{ _: 1 / 1, md: 1 / 2 }}>
             <Link to="/styles/">
-              <Box p={{ _: "layout.1", md: "layout.3" }} bg="brand.primary">
+              <Card p={{ _: "layout.1", md: "layout.3" }} bg="brand.primary">
                 <VStack space="layout.5">
                   <Text size={300} color="text.alt">
                     How it works
                   </Text>
                   <Heading size={700}>Styles</Heading>
                 </VStack>
-              </Box>
+              </Card>
             </Link>
           </Column>
           <Column width={{ _: 1 / 1, md: 1 / 2 }}>
             <Link to="/">
-              <Box p={{ _: "layout.1", md: "layout.3" }} bg="surface.wash">
+              <Card p={{ _: "layout.1", md: "layout.3" }} bg="surface.wash">
                 <VStack space="layout.5">
                   <Text size={300} color="text.alt">
                     Index
                   </Text>
                   <Heading size={700}>Home</Heading>
                 </VStack>
-              </Box>
+              </Card>
             </Link>
           </Column>
         </Columns>

@@ -23,8 +23,6 @@ const Heading = styled("h2", { shouldForwardProp })(
 Heading.defaultProps = {
   "data-component-id": "typography.heading",
   display: "block",
-  mt: 0,
-  mb: 0,
   size: 700,
   color: "text.default",
 }

@@ -23,8 +23,6 @@ const Text = styled("span", { shouldForwardProp })(
 Text.defaultProps = {
   "data-component-id": "typography.text",
   display: "block",
-  mt: 0,
-  mb: 0,
   size: 500,
   color: "text.default",
 }

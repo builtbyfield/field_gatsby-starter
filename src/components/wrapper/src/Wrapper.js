@@ -12,13 +12,13 @@
 
 import React from "react"
 
-import { Box } from "components"
+import { Box, ContentBlock } from "components"
 
 function Wrapper({
   as = "section",
   bg = "transparent",
   children,
-  maxWidth = 960,
+  maxWidth,
   pb,
   pt,
   px = [20, null, 32],
@@ -35,14 +35,7 @@ function Wrapper({
       overflow="hidden"
       {...rest}
     >
-      <Box
-        data-component-id="wrapper.inner"
-        width="100%"
-        maxWidth={maxWidth}
-        mx="auto"
-      >
-        {children}
-      </Box>
+      <ContentBlock maxWidth={maxWidth}>{children}</ContentBlock>
     </Box>
   )
 }
