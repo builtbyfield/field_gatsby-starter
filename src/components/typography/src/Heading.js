@@ -17,14 +17,29 @@ const Heading = styled("h2", { shouldForwardProp })(
     prop: "size",
     scale: "headings",
   }),
-  compose(COMMON, BORDER, TYPOGRAPHY, LAYOUT, POSITION, FLEX, GRID)
+  compose(COMMON, BORDER, TYPOGRAPHY, LAYOUT, POSITION, FLEX, GRID),
+  props => [
+    props.ellipsis && {
+      whiteSpace: "nowrap",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+    },
+    props.clamp > 0 && {
+      display: "-webkit-box",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+      WebkitBoxOrient: "vertical",
+      MozBoxOrient: "vertical",
+      WebkitLineClamp: props.clamp,
+    },
+  ]
 )
 
 Heading.defaultProps = {
   "data-component-id": "typography.heading",
   display: "block",
   size: 700,
-  color: "text.default",
+  color: "label.0",
 }
 
 export default Heading

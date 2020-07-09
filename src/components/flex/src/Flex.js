@@ -7,10 +7,12 @@
  * pinpoint which elements are flex elements and which are not.
  */
 
-import React from "react"
+import React, { forwardRef } from "react"
 
 import { Box } from "components"
 
-const Flex = props => <Box data-component-id="💪" display="flex" {...props} />
+const Flex = forwardRef(({ ...props }, ref) => {
+  return <Box data-component-id="💪" ref={ref} display="flex" {...props} />
+})
 
 export default Flex

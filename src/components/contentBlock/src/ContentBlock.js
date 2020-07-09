@@ -9,7 +9,6 @@
  */
 
 import React from "react"
-
 import { Box } from "components"
 
 function ContentBlock({ maxWidth = 960, ...rest }) {

@@ -11,8 +11,7 @@
  * Assigning `overflow: hidden` to the component will hide
  * anything that might be larger than the aspect ratio.
  */
-
-import React from "react"
+import React, { forwardRef } from "react"
 import styled from "@emotion/styled"
 import { system } from "styled-system"
 
@@ -30,10 +29,11 @@ const StyledBox = styled(Box)(
   })
 )
 
-const AspectRatio = ({ children, ratio, ...rest }) => {
+const AspectRatio = forwardRef(({ children, ratio, ...rest }, ref) => {
   return (
     <StyledBox
       data-component-id="aspectRatio"
+      ref={ref}
       position="relative"
       width="100%"
       ratio={ratio}
@@ -51,7 +51,7 @@ const AspectRatio = ({ children, ratio, ...rest }) => {
       </Box>
     </StyledBox>
   )
-}
+})
 
 AspectRatio.defaultProps = {
   ratio: "16:9",

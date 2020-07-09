@@ -11,7 +11,7 @@
  * properly. Use a spread operator like {...props} to do this.
  */
 
-import React from "react"
+import React, { forwardRef } from "react"
 import styled from "@emotion/styled"
 import { system, get } from "styled-system"
 
@@ -62,30 +62,40 @@ const StyledBox = styled(Box)(
   })
 )
 
-function Column({
-  children,
-  columnComponent,
-  space = 0,
-  spaceX,
-  spaceY,
-  width,
-}) {
-  return (
-    <StyledBox
-      data-component-id="column"
-      as={columnComponent}
-      flex={!width && 1}
-      flexShrink={width === "content" && 0}
-      width={width !== "content" ? width : null}
-      minWidth={0}
-      gutterX={spaceX ? spaceX : space}
-      gutterY={spaceY ? spaceY : space}
-    >
-      <Box data-component-id="column.inner" height="100%">
-        {children}
-      </Box>
-    </StyledBox>
-  )
-}
+const Column = forwardRef(
+  (
+    {
+      children,
+      columnComponent,
+      display,
+      order,
+      space = 0,
+      spaceX,
+      spaceY,
+      width,
+    },
+    ref
+  ) => {
+    return (
+      <StyledBox
+        data-component-id="column"
+        ref={ref}
+        as={columnComponent}
+        display={display}
+        flex={!width && 1}
+        flexShrink={width === "content" && 0}
+        order={order}
+        width={width !== "content" ? width : null}
+        minWidth={0}
+        gutterX={spaceX ? spaceX : space}
+        gutterY={spaceY ? spaceY : space}
+      >
+        <Box data-component-id="column.inner" minWidth={0} height="100%">
+          {children}
+        </Box>
+      </StyledBox>
+    )
+  }
+)
 
 export default Column

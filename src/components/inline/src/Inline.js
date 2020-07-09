@@ -45,12 +45,12 @@ const StyledBox = styled(Box)(
         if (typeof n === "string") {
           if (n.indexOf("px") !== -1) {
             let number = parseInt(n.replace("px", ""))
-            return "-" + number / 2 + "px"
+            return "-" + number + "px"
           } else {
-            return "-" + value / 2 + "px"
+            return "-" + value + "px"
           }
         } else {
-          return "-" + value / 2 + "px"
+          return "-" + value + "px"
         }
       },
     },
@@ -65,12 +65,12 @@ const StyledBox = styled(Box)(
         if (typeof n === "string") {
           if (n.indexOf("px") !== -1) {
             let number = parseInt(n.replace("px", ""))
-            return "-" + number / 2 + "px"
+            return "-" + number + "px"
           } else {
-            return "-" + value / 2 + "px"
+            return "-" + value + "px"
           }
         } else {
-          return "-" + value / 2 + "px"
+          return "-" + value + "px"
         }
       },
     },
@@ -91,12 +91,12 @@ const InnerStyledBox = styled(Box)(
         if (typeof n === "string") {
           if (n.indexOf("px") !== -1) {
             let number = parseInt(n.replace("px", ""))
-            return number / 2 + "px"
+            return number + "px"
           } else {
-            return value / 2 + "px"
+            return value + "px"
           }
         } else {
-          return value / 2 + "px"
+          return value + "px"
         }
       },
     },
@@ -111,12 +111,12 @@ const InnerStyledBox = styled(Box)(
         if (typeof n === "string") {
           if (n.indexOf("px") !== -1) {
             let number = parseInt(n.replace("px", ""))
-            return number / 2 + "px"
+            return number + "px"
           } else {
-            return value / 2 + "px"
+            return value + "px"
           }
         } else {
-          return value / 2 + "px"
+          return value + "px"
         }
       },
     },

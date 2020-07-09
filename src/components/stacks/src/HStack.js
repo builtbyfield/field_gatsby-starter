@@ -8,7 +8,7 @@
 
 import React, { Children } from "react"
 
-import { Box } from "components"
+import { Box, Divider } from "components"
 
 function flexAlign(x) {
   if (x === "start") return "flex-start"
@@ -39,26 +39,14 @@ function HStack({ align, as = "div", children, dividers = false, space = 0 }) {
           data-component-id="stacks.hStack.child"
           as={stackItemComponent}
           display="flex"
+          minWidth={0}
           pr={dividers ? undefined : space}
           css={{ ":last-of-type": { paddingRight: 0 } }}
           key={"child" + index}
         >
           {dividers && index > 0 ? (
             <Box data-component-id="stacks.hStack.child.divider" px={space}>
-              <Box
-                data-component-id="divider"
-                position="relative"
-                height="100%"
-              >
-                <Box
-                  data-component-id="divider.line"
-                  position="absolute"
-                  width="1px"
-                  height="100%"
-                  bg="surface.border"
-                  css={{ transform: "translateX(-50%)" }}
-                />
-              </Box>
+              <Divider vertical />
             </Box>
           ) : null}
           {child}

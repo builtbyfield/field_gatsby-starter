@@ -8,16 +8,18 @@
  * values as whole numbers or pixels.
  */
 
-import React from "react"
+import React, { forwardRef } from "react"
 import styled from "@emotion/styled"
 import { system, get } from "styled-system"
 
 import { Box } from "components"
 
-function flexAlign(x) {
-  if (x === "start") return "flex-start"
-  if (x === "center") return "center"
-  if (x === "end") return "flex-end"
+function flexAlign(position) {
+  if (position === "start") return "flex-start"
+  if (position === "center") return "center"
+  if (position === "end") return "flex-end"
+  if (position === "between") return "space-between"
+  if (position === "evenly") return "space-evenly"
   return undefined
 }
 
@@ -78,40 +80,49 @@ const StyledBox = styled(Box)(
   })
 )
 
-function Columns({ alignY, as = "div", children, space = 0, spaceX, spaceY }) {
-  /**
-   * Setting the "as" prop to "ol" or "ul" will turn the Columns
-   * component into a ol or ul element and all Column children
-   * into li items.
-   */
-  const isList = as === "ol" || as === "ul"
-  const columnComponent = isList ? "li" : "div"
+const Columns = forwardRef(
+  (
+    { alignX, alignY, as = "div", children, space = 0, spaceX, spaceY },
+    ref
+  ) => {
+    /**
+     * Setting the "as" prop to "ol" or "ul" will turn the Columns
+     * component into a ol or ul element and all Column children
+     * into li items.
+     */
+    const isList = as === "ol" || as === "ul"
+    const columnComponent = isList ? "li" : "div"
 
-  // Pass properties down to children
-  const childrenWithProps = React.Children.map(children, child =>
-    React.cloneElement(child, {
-      columnComponent: columnComponent,
-      space: space,
-      spaceX: spaceX,
-      spaceY: spaceY,
+    // Pass properties down to children
+    const childrenWithProps = React.Children.map(children, child => {
+      if (child) {
+        return React.cloneElement(child, {
+          columnComponent: columnComponent,
+          space: space,
+          spaceX: spaceX,
+          spaceY: spaceY,
+        })
+      }
     })
-  )
 
-  return (
-    <StyledBox
-      data-component-id="columns"
-      as={as}
-      display="flex"
-      flexWrap="wrap"
-      alignItems={flexAlign(alignY)}
-      negativeMarginX={spaceX ? spaceX : space}
-      negativeMarginY={spaceY ? spaceY : space}
-      p={0}
-      css={isList && { listStyle: "none" }}
-    >
-      {childrenWithProps}
-    </StyledBox>
-  )
-}
+    return (
+      <StyledBox
+        data-component-id="columns"
+        ref={ref}
+        as={as}
+        display="flex"
+        flexWrap="wrap"
+        justifyContent={flexAlign(alignX)}
+        alignItems={flexAlign(alignY)}
+        negativeMarginX={spaceX ? spaceX : space}
+        negativeMarginY={spaceY ? spaceY : space}
+        p={0}
+        css={isList && { listStyle: "none" }}
+      >
+        {childrenWithProps}
+      </StyledBox>
+    )
+  }
+)
 
 export default Columns

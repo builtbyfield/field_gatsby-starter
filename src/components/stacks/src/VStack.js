@@ -44,6 +44,7 @@ function VStack({
         <Box
           data-component-id="stacks.vStack.child"
           as={stackItemComponent}
+          minWidth={0}
           pb={dividers ? undefined : space}
           css={{ ":last-of-type": { paddingBottom: 0 } }}
           key={"child" + index}
@@ -54,7 +55,7 @@ function VStack({
               width="100%"
               py={space}
             >
-              <Divider />
+              <Divider horizontal />
             </Box>
           ) : null}
           {child}

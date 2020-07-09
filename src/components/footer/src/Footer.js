@@ -1,5 +1,4 @@
 import React from "react"
-
 import { Box } from "components"
 
 function Footer() {
@@ -10,7 +9,7 @@ function Footer() {
       mt="auto"
       pt={{ _: "layout.5", md: "layout.6" }}
     >
-      <Box height="4px" bg="brand.primary" />
+      <Box height="4px" bg="fill.0" />
     </Box>
   )
 }

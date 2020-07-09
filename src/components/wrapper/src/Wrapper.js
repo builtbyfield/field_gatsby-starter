@@ -9,9 +9,7 @@
  * so that content never bleeds into the edge of the
  * screen.
  */
-
 import React from "react"
-
 import { Box, ContentBlock } from "components"
 
 function Wrapper({
@@ -21,7 +19,8 @@ function Wrapper({
   maxWidth,
   pb,
   pt,
-  px = [20, null, 32],
+  px = { _: "layout.1", md: "layout.3" },
+  overflow = "hidden",
   ...rest
 }) {
   return (
@@ -31,8 +30,8 @@ function Wrapper({
       px={px}
       pt={pt}
       pb={pb}
+      overflow={overflow}
       bg={bg}
-      overflow="hidden"
       {...rest}
     >
       <ContentBlock maxWidth={maxWidth}>{children}</ContentBlock>
